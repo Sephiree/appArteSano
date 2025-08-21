@@ -1,31 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, FlatList, Image } from 'react-native';
-import categories from './src/data/categories.json'
 import Header from './src/components/Header';
-import FlatCard from './src/components/FlatCard';
+import CategoriesScreen from './src/screens/CategoriesScreen';
+
 
 export default function App() {
-  const renderCategoryItem = ({item}) => (
-    <FlatCard>
-      <Text>{item.title}</Text>
-      <Image width={120} height={50} source={{uri: item.image}} resizeMode='contain' />
-    </FlatCard>
-  )
-  return (
-    <View style={styles.container}>
-      <Header title="Arte Sano"/>
-      <FlatList
-      data={categories}
-      renderItem={renderCategoryItem}
-      keyExtractor={item=>item.id}
-      />
+  
+  return (    
+    <>
       <StatusBar style="light" />
-    </View>
+      <Header title="Arte Sano"/>
+      <CategoriesScreen/>
+    </>
+
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
 });
