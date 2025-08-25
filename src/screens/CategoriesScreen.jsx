@@ -1,25 +1,26 @@
-import { StyleSheet, Text, View, Image, FlatList } from "react-native";
+import { StyleSheet, Text, View, Image, FlatList, Pressable } from "react-native";
 import categories from "../data/categories.json";
 import FlatCard from "../components/FlatCard";
 
-const CategoriesScreen = () => {
+const CategoriesScreen = (setCategorySelected) => {
   const renderCategoryItem = ({ item }) => {
     return (
-         <View style={styles.container}>
-    <FlatCard style={{ backgroundColor: "blue" }}>
-      <Text>{item.title}</Text>
-      <Image width={120} height={50} source={{ uri: item.image }} resizeMode="contain" />
-    </FlatCard>
-    </View>
-    )
-};
+      <Pressable onPress={()=> setCategorySelected(item.title)}>
+        <FlatCard style={styles.cardCustom}>
+          <Text>{item.title}</Text>
+          <Image width={120} height={50} source={{ uri: item.image }} resizeMode="contain" />
+        </FlatCard>
+        </Pressable>
 
-return (
-     <FlatList
+    );
+  };
+
+  return (
+    <FlatList
       data={categories}
       renderItem={renderCategoryItem}
-      keyExtractor={item=>item.id}
-      />
+      keyExtractor={(item) => item.id}
+    />
   );
 };
 export default CategoriesScreen;

@@ -1,14 +1,23 @@
-import { StyleSheet, Text, View } from 'react-native'
-import products from '../data/products.json'
+import { FlatList, StyleSheet, Text, View } from "react-native";
+import products from "../data/products.json";
+import { useEffect, useState } from "react";
 
 
-
-const ProductScreen = () => {
+const ProductScreen = ({category}) => {
+  const [productsFiltered,setProductsFilteredByCategory] = useState ([])
+  useEffect(()=>{
+    const ProductsFilteredByCategory = products.filter(product=>product.category===category)
+    setProductsFilteredByCategory(ProductsFilteredByCategory)
+  },[])
   return (
     <View>
-      <Text>ProductScreen</Text>
+      <FlatList
+        data={productsFiltered}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <Text> {item.title} </Text>}
+      />
     </View>
-  )
-}
-export default ProductScreen
-const styles = StyleSheet.create({})
+  );
+};
+export default ProductScreen;
+const styles = StyleSheet.create({});
