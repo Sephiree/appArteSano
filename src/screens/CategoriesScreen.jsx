@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Image, FlatList, Pressable } from "react-native
 import categories from "../data/categories.json";
 import FlatCard from "../components/FlatCard";
 
-const CategoriesScreen = (setCategorySelected) => {
+const CategoriesScreen = ({setCategorySelected}) => {
   const renderCategoryItem = ({ item }) => {
     return (
       <Pressable onPress={()=> setCategorySelected(item.title)}>

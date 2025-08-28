@@ -23,7 +23,7 @@ export default function App() {
         :
         <>
           <Header title="Arte Sano" subtitle="Categorias"/>
-          <CategoriesScreen/>
+          <CategoriesScreen setCategorySelected={setCategorySelected}/>
           </>
         }
       

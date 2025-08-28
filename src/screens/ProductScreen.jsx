@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const ProductScreen = ({category}) => {
   const [productsFiltered,setProductsFilteredByCategory] = useState ([])
   useEffect(()=>{
-    const ProductsFilteredByCategory = products.filter(product=>product.category===category)
+    const ProductsFilteredByCategory = products.filter(product=>product.category.toLowerCase()===category.toLowerCase())
     setProductsFilteredByCategory(ProductsFilteredByCategory)
   },[])
   return (
