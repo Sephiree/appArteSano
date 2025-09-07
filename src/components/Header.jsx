@@ -23,6 +23,7 @@ container: {
     title:{
         fontSize:24,
         color: colors.white,
+        fontFamily: "TitleF",
     },
 })
 

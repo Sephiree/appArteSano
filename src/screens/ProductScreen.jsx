@@ -1,6 +1,7 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import products from "../data/products.json";
 import { useEffect, useState } from "react";
+import TitleScript from "../components/TitleScript";
 
 
 const ProductScreen = ({category}) => {
@@ -14,10 +15,10 @@ const ProductScreen = ({category}) => {
       <FlatList
         data={productsFiltered}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <Text> {item.title} </Text>}
+        renderItem={({ item }) => <TitleScript> {item.title} </TitleScript>}
       />
     </View>
   );
 };
-export default ProductScreen;
+export default ProductScreen; 
 const styles = StyleSheet.create({});
