@@ -13,8 +13,8 @@ SplashScreen.preventAutoHideAsync();
 export default function App() {
   const [categorySelected, setCategorySelected] = useState ("")
     const [loaded, error] = useFonts({
-      TitleF: require("./assets/fonts/StoryScript-Regular.ttf"),
-      BodyF: require("./assets/fonts/NotoSansJP-VariableFont_wght.ttf"),
+      'TitleF': require("./assets/fonts/StoryScript-Regular.ttf"),
+      'BodyF': require("./assets/fonts/NotoSansJP-VariableFont_wght.ttf"),
     });
     useEffect(() => {
     if (loaded || error) {
@@ -36,7 +36,7 @@ export default function App() {
         </>
         :
         <>
-          <Header title="Arte Sano" subtitle="Categorias"/>
+          <Header title="Arte Sano" subtitle="Categories"/>
           <CategoriesScreen setCategorySelected={setCategorySelected}/>
           </>
         }

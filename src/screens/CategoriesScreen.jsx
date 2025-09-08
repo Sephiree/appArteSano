@@ -25,7 +25,4 @@ const CategoriesScreen = ({setCategorySelected}) => {
 };
 export default CategoriesScreen;
 const styles = StyleSheet.create({
-  title:{
-    fontFamily: "BodyF"
-  },
 });

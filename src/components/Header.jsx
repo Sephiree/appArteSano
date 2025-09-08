@@ -15,7 +15,7 @@ export default Header
 const styles = StyleSheet.create({
 
 container: {
-    backgroundColor: colors.cobaltBlue,
+    backgroundColor: colors.brightOrange,
     height: 150,
     justifyContent: "center",
     alignItems:"center",
@@ -23,6 +23,8 @@ container: {
     title:{
         fontSize:24,
         color: colors.white,
+        padding: 8,
+        paddingTop: 32,
         fontFamily: "TitleF",
     },
 })

@@ -1,8 +1,7 @@
-import { Text} from 'react-native'
+import { Text } from 'react-native'
 
 const TitleScript = ({children, style}) => {
-    return <Text style={{fontFamily:"TitleF", ...style}}>{children}</Text>
-    
+    return <Text style={{ fontFamily:"BodyF",...style}}>{children}</Text>
 }
 
 export default TitleScript
