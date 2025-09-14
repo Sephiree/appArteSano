@@ -3,8 +3,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, FlatList, Image } from 'react-native';
 import Header from './src/components/Header';
-import CategoriesScreen from './src/screens/CategoriesScreen';
-import ProductScreen from './src/screens/ProductScreen';
+import { CategoriesScreen, ProductScreen } from './src/screens';
 import { useState, useEffect } from 'react';
 
 SplashScreen.preventAutoHideAsync();

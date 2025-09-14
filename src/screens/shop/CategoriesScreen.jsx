@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image, FlatList, Pressable } from "react-native";
-import categories from "../data/categories.json";
-import FlatCard from "../components/FlatCard";
+import categories from "../../data/categories.json";
+import FlatCard from "../../components/FlatCard";
 
 const CategoriesScreen = ({setCategorySelected}) => {
   const renderCategoryItem = ({ item }) => {
@@ -20,8 +20,8 @@ const CategoriesScreen = ({setCategorySelected}) => {
       data={categories}
       renderItem={renderCategoryItem}
       keyExtractor={(item) => item.id}
-    />
-  );
+      />
+    );
 };
 export default CategoriesScreen;
 const styles = StyleSheet.create({

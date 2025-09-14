@@ -1,8 +1,8 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
-import products from "../data/products.json";
+import products from "../../data/products.json";
 import { useEffect, useState } from "react";
-import TitleScript from "../components/TitleScript";
-import Search from "../components/Search";
+import TitleScript from "../../components/TitleScript";
+import Search from "../../components/Search";
 
 
 const ProductScreen = ({category}) => {
