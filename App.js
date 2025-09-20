@@ -1,16 +1,15 @@
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, FlatList, Image } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Header from './src/components/Header';
-import { CategoriesScreen, ProductScreen } from './src/screens';
 import { useState, useEffect } from 'react';
+import ShopStackNavigator from '../appArteSano/src/navigation/shop/ShopStackNavigation';
 
 SplashScreen.preventAutoHideAsync();
 
 
 export default function App() {
-  const [categorySelected, setCategorySelected] = useState ("")
     const [loaded, error] = useFonts({
       'TitleF': require("./assets/fonts/StoryScript-Regular.ttf"),
       'BodyF': require("./assets/fonts/NotoSansJP-VariableFont_wght.ttf"),
@@ -22,28 +21,12 @@ export default function App() {
   }, [loaded, error]);
 
   
-  return (     
+  return (                             
     <>
       <StatusBar style="light" />
-
-      {
-        categorySelected
-          ?
-          <>
-            <Header title="Arte Sano" subtitle="Productos"/>
-            <ProductScreen category={categorySelected}/>
-        </>
-        :
-        <>
-          <Header title="Arte Sano" subtitle="Categories"/>
-          <CategoriesScreen setCategorySelected={setCategorySelected}/>
-          </>
-        }
-      
+      <ShopStackNavigator />
     </>
 
   );
 }
 
-const styles = StyleSheet.create({
-});

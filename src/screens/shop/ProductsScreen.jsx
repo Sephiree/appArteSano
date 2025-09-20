@@ -5,9 +5,12 @@ import TitleScript from "../../components/TitleScript";
 import Search from "../../components/Search";
 
 
-const ProductScreen = ({category}) => {
+
+const ProductsScreen = ({route}) => {
   const [productsFiltered,setProductsFiltered] = useState ([])
   const [keyword, setKeyword] = useState ("")
+
+  const {category} = route.params
 
   useEffect(()=>{
     const ProductsFilteredByCategory = products.filter(product=>product.category.toLowerCase()===category.toLowerCase())
@@ -31,5 +34,5 @@ const ProductScreen = ({category}) => {
     </View>
   )
 }
-export default ProductScreen
+export default ProductsScreen
 const styles = StyleSheet.create({})
